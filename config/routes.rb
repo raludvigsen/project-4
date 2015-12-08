@@ -2,10 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
   resources :pages
 
+  resources :links
+
   root :to => "pages#index"
 end
-
-
 #                   Prefix Verb   URI Pattern                    Controller#Action
 #         new_user_session GET    /users/sign_in(.:format)       devise/sessions#new
 #             user_session POST   /users/sign_in(.:format)       devise/sessions#create
@@ -30,4 +30,12 @@ end
 #                          PATCH  /pages/:id(.:format)           pages#update
 #                          PUT    /pages/:id(.:format)           pages#update
 #                          DELETE /pages/:id(.:format)           pages#destroy
+#                    links GET    /links(.:format)               links#index
+#                          POST   /links(.:format)               links#create
+#                 new_link GET    /links/new(.:format)           links#new
+#                edit_link GET    /links/:id/edit(.:format)      links#edit
+#                     link GET    /links/:id(.:format)           links#show
+#                          PATCH  /links/:id(.:format)           links#update
+#                          PUT    /links/:id(.:format)           links#update
+#                          DELETE /links/:id(.:format)           links#destroy
 #                     root GET    /                              pages#index
